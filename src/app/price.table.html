@@ -1,0 +1,35 @@
+<table class="table">
+  <tr>
+    <th></th>
+    <th>1 date package</th>
+    <th>3 date package</th>
+    <th>5 date package</th>
+    <th>10 date package</th>
+  </tr>
+  <tr>
+    <td>No installment</td>
+    <td *ngFor="let payment of stripe.payments">
+      S${{payment.amount}}
+      <br>
+      <button (click)="choosePayment(payment)" type="button" class="btn btn-primary">Pay with Card</button>
+    </td>
+  </tr>
+  <tr>
+    <td>3 months installment</td>
+    <td></td>
+    <td *ngFor="let plan of stripe.plans['3 months']">
+      S${{plan.amount}}
+      <br>
+      <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
+    </td>
+  </tr>
+  <tr>
+    <td>6 months installment</td>
+    <td></td>
+    <td *ngFor="let plan of stripe.plans['6 months']">
+      S${{plan.amount}}
+      <br>
+      <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
+    </td>
+  </tr>
+</table>

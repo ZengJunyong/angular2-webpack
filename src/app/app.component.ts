@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import '../../public/css/styles.css';
+import {Component,ViewEncapsulation} from '@angular/core';
+
 @Component({
-    selector: 'my-app',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  moduleId: module.id,
+  selector: 'app',
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: [
+    'styles.css'
+  ],
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
-    constructor(){
-        console.log('AppComponent constructor great!');
-    }
 }

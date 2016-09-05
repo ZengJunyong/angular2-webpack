@@ -1,4 +1,17 @@
-<main>
-    <h1>Hello from Angular 2 App with Webpack</h1>
-    <img src="../../public/images/angular.png">
-</main>
+<h1 class="text-center">GaiGai</h1>
+
+<div class="container">
+  <ul class="nav nav-pills">
+    <li routerLinkActive="active">
+      <a [routerLink]="['/full']">FULL</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/per10']">10% OFF</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/sdn']">SDN</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+
+</div>
