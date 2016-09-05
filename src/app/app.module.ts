@@ -12,6 +12,6 @@ import { AppComponent } from './app.component';
 })
 export class AppModule {
     constructor(){
-        console.log('AppModule constructor');
+        console.log('AppModule constructor,yeah!');
     }
 }
