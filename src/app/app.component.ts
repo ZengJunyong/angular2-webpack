@@ -7,6 +7,6 @@ import '../../public/css/styles.css';
 })
 export class AppComponent {
     constructor(){
-        console.log('AppComponent constructor');
+        console.log('AppComponent constructor great!');
     }
 }
