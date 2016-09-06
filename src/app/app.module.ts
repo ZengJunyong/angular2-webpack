@@ -20,12 +20,10 @@ const APP_PROVIDERS = [
     AppState
 ];
 
-import {FullComponent}       from './full.component';
-import {Per10Component} from './per10.component';
-import {SDNComponent}       from './sdn.component';
+import {PriceTable}       from './price.table';
 import {PayComponent} from './pay.component';
 import {StripeService}     from './stripe.service';
-import { StripeConfigResolve }  from './stripe.config.resolve';
+import { PriceResolve }  from './stripe.config.resolve';
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -33,7 +31,7 @@ import { StripeConfigResolve }  from './stripe.config.resolve';
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
-        FullComponent,Per10Component,SDNComponent,PayComponent,
+        PriceTable,PayComponent,
         NoContent
     ],
     imports: [ // import Angular's modules
@@ -46,7 +44,7 @@ import { StripeConfigResolve }  from './stripe.config.resolve';
         // ENV_PROVIDERS,
         APP_PROVIDERS,
         StripeService,
-        StripeConfigResolve
+        PriceResolve
     ]
 })
 export class AppModule {

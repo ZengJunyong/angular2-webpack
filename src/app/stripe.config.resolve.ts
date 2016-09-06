@@ -8,7 +8,7 @@ import {Observable}             from 'rxjs/Observable';
 import {StripeService}     from './stripe.service';
 
 @Injectable()
-export class StripeConfigResolve implements Resolve<any> {
+export class PriceResolve implements Resolve<any> {
   constructor(private cs: StripeService, private router: Router) {
   }
 
