@@ -12,15 +12,17 @@ export class PayComponent implements OnInit, OnDestroy {
     plan: any;
     success: number;
 
+    user: {firstName: string,lastName: string} = {};
 
     constructor(private route: ActivatedRoute, private stripeService: StripeService) {
     }
 
-    pay() {
+    onSubmit() {
         var _this = this;
         let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
         // let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
         let {id, itemName, amount, count} = this.plan;
+        let {firstName, lastName} = this.user;
         StripeCheckout.configure({
             key: key,
             name: 'GaiGai Pte Ltd',
@@ -34,8 +36,14 @@ export class PayComponent implements OnInit, OnDestroy {
                     id,
                     tokenId: token.id,
                     email: token.email,
-                    amount, itemName, count
-                }).subscribe(result => _this.success = result.success);
+                    amount, itemName, count, firstName, lastName
+                }).subscribe((result) => {
+                    let {success} = result;
+                    if (success) {
+                        _this.user = {};
+                    }
+                    _this.success = success;
+                });
             }
         }).open();
     }
