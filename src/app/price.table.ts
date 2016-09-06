@@ -1,7 +1,15 @@
 import {Component} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {StripeService}     from './stripe.service';
-import {Plan} from './model/plan'
+
+interface Plan {
+    id?: string;
+    tokenId?: string;
+    email?: string;
+    amount: number;
+    itemName: string;
+    count?: number;
+}
 
 @Component({
     moduleId: module.id,

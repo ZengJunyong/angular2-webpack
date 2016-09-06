@@ -3,7 +3,7 @@ import {NoContent} from './no-content';
 
 import {PriceTable} from './price.table';
 import {PayComponent} from './pay.component';
-import {PriceResolve}   from './stripe.config.resolve';
+import {PriceResolve}   from './price.resolve';
 
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'full', pathMatch: 'full'},
