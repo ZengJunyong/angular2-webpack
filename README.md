@@ -1,0 +1,1 @@
+1) how to prepare data before rendering the app?
