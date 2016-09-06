@@ -13,6 +13,9 @@ interface Plan {
 
 @Component({
     moduleId: module.id,
+    styleUrls: [
+        'price.table.css'
+    ],
     templateUrl: 'price.table.html'
 })
 export class PriceTable {
