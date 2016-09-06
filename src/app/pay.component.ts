@@ -10,7 +10,7 @@ import {Plan} from './plan'
 export class PayComponent implements OnInit, OnDestroy {
     sub: any;
     plan: any;
-    success: boolean;
+    success: number;
 
 
     constructor(private route: ActivatedRoute, private stripeService: StripeService) {
@@ -20,18 +20,22 @@ export class PayComponent implements OnInit, OnDestroy {
         var _this = this;
         let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
         // let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
+        let {id, itemName, amount, count} = this.plan;
         StripeCheckout.configure({
             key: key,
             name: 'GaiGai Pte Ltd',
-            description: this.plan.itemName,
+            description: itemName,
             image: 'https://www.letsgaigai.com/gokaikai/assets/images/big.logo.png',
             allowRememberMe: false,
-            panelLabel: this.plan.count ? 'Subscribe' : 'Pay S$' + this.plan.amount,
+            panelLabel: count ? 'Subscribe' : 'Pay S$' + amount,
             token: function (token: any) {
-                _this.plan.tokenId = token.id;
-                _this.plan.email = token.email;
-                console.log(_this.plan);
-                _this.stripeService.pay(_this.plan).subscribe(result => _this.success = result.success);
+                // TODO why can't use _this.plan here?
+                _this.stripeService.pay({
+                    id,
+                    tokenId: token.id,
+                    email: token.email,
+                    amount, itemName, count
+                }).subscribe(result => _this.success = result.success);
             }
         }).open();
     }

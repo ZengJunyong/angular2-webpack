@@ -18,9 +18,11 @@
 
             <button (click)="pay()" *ngIf="plan.count" type="submit" class="btn btn-primary">Subscribe</button>
             <button (click)="pay()" *ngIf="!plan.count" type="submit" class="btn btn-primary">Pay S${{plan.amount}}</button>
+
+            <span *ngIf="success==0" style="color: red;">Opps, something is wrong!</span>
+            <span *ngIf="success==1" style="color: green;">Thanks for purchasing</span>
         </form>
     </div>
 </div>
 
-<span *ngIf="success==0" style="color: red;">Opps, something is wrong!</span>
-<span *ngIf="success==1" style="color: green;">Thanks for purchasing</span>
+
