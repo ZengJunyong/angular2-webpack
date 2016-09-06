@@ -1,2 +1,26 @@
-<span *ngIf="result.success==0" style="color: red;">Opps, something is wrong!</span>
-<span *ngIf="result.success==1" style="color: green;">Thanks for purchasing</span>
+<div class="panel panel-primary">
+    <div class="panel-heading text-center">
+        <h3 class="panel-title">
+            {{plan.itemName}}
+            <span *ngIf="plan.count">, S${{plan.amount}} for each month, for {{plan.count}} instalments</span>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <label>First name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <button (click)="pay()" *ngIf="plan.count" type="submit" class="btn btn-primary">Subscribe</button>
+            <button (click)="pay()" *ngIf="!plan.count" type="submit" class="btn btn-primary">Pay S${{plan.amount}}</button>
+        </form>
+    </div>
+</div>
+
+<span *ngIf="success==0" style="color: red;">Opps, something is wrong!</span>
+<span *ngIf="success==1" style="color: green;">Thanks for purchasing</span>
