@@ -14,6 +14,7 @@ import {NoContent} from './no-content';
 
 
 import {PriceTable}       from './price.table';
+import {Custom} from './custom';
 import {PayComponent} from './pay.component';
 import {StripeService}     from './stripe.service';
 import {PriceResolve}  from './price.resolve';
@@ -24,7 +25,7 @@ import {PriceResolve}  from './price.resolve';
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        PriceTable,
+        PriceTable,Custom,
         PayComponent,
         NoContent
     ],

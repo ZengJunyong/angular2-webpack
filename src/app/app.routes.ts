@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {NoContent} from './no-content';
 
 import {PriceTable} from './price.table';
+import {Custom} from './custom';
 import {PayComponent} from './pay.component';
 import {PriceResolve}   from './price.resolve';
 
@@ -24,6 +25,13 @@ export const ROUTES: Routes = [
     {
         path: 'sdn',
         component: PriceTable,
+        resolve: {
+            stripe: PriceResolve
+        }
+    },
+    {
+        path: 'custom',
+        component: Custom,
         resolve: {
             stripe: PriceResolve
         }

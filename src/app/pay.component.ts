@@ -12,7 +12,8 @@ export class PayComponent implements OnInit, OnDestroy {
     plan: any;
     success: number;
 
-    user: {firstName: string,lastName: string} = {};
+    // user: {firstName: string,lastName: string} = {};
+    user: any = {}; // I think any is better at here
 
     constructor(private route: ActivatedRoute, private stripeService: StripeService) {
     }
