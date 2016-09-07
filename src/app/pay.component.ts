@@ -20,8 +20,8 @@ export class PayComponent implements OnInit, OnDestroy {
 
     onSubmit() {
         var _this = this;
-        let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
-        // let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
+        // let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
+        let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
         let {id, itemName, amount, count} = this.plan;
         let {firstName, lastName} = this.user;
         StripeCheckout.configure({
