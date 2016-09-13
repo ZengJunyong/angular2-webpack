@@ -22,13 +22,13 @@ export const ROUTES: Routes = [
             stripe: PriceResolve
         }
     },
-    {
-        path: 'sdn',
-        component: PriceTable,
-        resolve: {
-            stripe: PriceResolve
-        }
-    },
+    // {
+    //     path: 'sdn',
+    //     component: PriceTable,
+    //     resolve: {
+    //         stripe: PriceResolve
+    //     }
+    // },
     {
         path: 'custom',
         component: Custom,
