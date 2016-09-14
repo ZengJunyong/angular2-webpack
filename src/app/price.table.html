@@ -32,4 +32,13 @@
       <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
     </td>
   </tr>
+  <tr>
+    <td>9 months installment</td>
+    <td></td>
+    <td *ngFor="let plan of stripe.plans['9 months']">
+      S${{plan.amount}}
+      <br>
+      <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
+    </td>
+  </tr>
 </table>
