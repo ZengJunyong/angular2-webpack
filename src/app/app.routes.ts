@@ -37,6 +37,20 @@ export const ROUTES: Routes = [
         }
     },
     {
+        path: 'custom2',
+        component: Custom,
+        resolve: {
+            stripe: PriceResolve
+        }
+    },
+    {
+        path: 'custom3',
+        component: Custom,
+        resolve: {
+            stripe: PriceResolve
+        }
+    },
+    {
         path: 'pay',
         component: PayComponent
     },
