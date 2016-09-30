@@ -2,7 +2,7 @@
     <div class="panel-heading text-center">
         <h3 class="panel-title">
             {{plan.itemName}}
-            <span *ngIf="plan.count">, S${{plan.amount}} for each month, for {{plan.count}} instalments</span>
+            <span *ngIf="plan.count">, MYR{{plan.amount}} for each month, for {{plan.count}} instalments</span>
         </h3>
     </div>
     <div class="panel-body">
@@ -17,7 +17,7 @@
             </div>
 
             <button *ngIf="plan.count" [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Subscribe</button>
-            <button *ngIf="!plan.count" [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Pay S${{plan.amount}}</button>
+            <button *ngIf="!plan.count" [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Pay MYR{{plan.amount}}</button>
 
             <span *ngIf="success==0" style="color: red;">Opps, something is wrong!</span>
             <span *ngIf="success==1" style="color: green;">Thanks for purchasing</span>

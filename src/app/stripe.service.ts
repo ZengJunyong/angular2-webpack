@@ -6,8 +6,9 @@ import {Observable}     from 'rxjs/Observable';
 
 @Injectable()
 export class StripeService {
-  path = 'https://letsgaigai.com/';
+  path = 'http://www.mydatesmith.com/';
   // path= 'http://localhost:4000/';
+  // path= 'http://letsgaigai.com/';
 
   constructor(private http: Http) {
   }

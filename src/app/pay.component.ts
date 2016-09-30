@@ -20,17 +20,17 @@ export class PayComponent implements OnInit, OnDestroy {
 
     onSubmit() {
         var _this = this;
-        // let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
-        let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
+        // let key = 'pk_test_eiiwIKCYkfioOq4JkZqmvBa7';
+        let key = 'pk_live_FOCwVXu69gKwdVQD2h5h8Fuy';
         let {id, itemName, amount, count} = this.plan;
         let {firstName, lastName} = this.user;
         StripeCheckout.configure({
             key: key,
-            name: 'GaiGai Pte Ltd',
+            name: 'PaktorMY Sdn Bhd',
             description: itemName,
             image: 'https://www.letsgaigai.com/gokaikai/assets/images/big.logo.png',
             allowRememberMe: false,
-            panelLabel: count ? 'Subscribe' : 'Pay S$' + amount,
+            panelLabel: count ? 'Subscribe' : 'Pay MYR' + amount,
             token: function (token: any) {
                 // TODO why can't use _this.plan here?
                 _this.stripeService.pay({
