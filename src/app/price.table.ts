@@ -10,12 +10,14 @@ import {Plan} from './plan'
     ],
     templateUrl: 'price.table.html'
 })
-export class PriceTable{
+export class PriceTable {
     stripe: any;
+    months: number;
 
-    constructor(private route: ActivatedRoute, private router: Router,private data: DataService) {
+    constructor(private route: ActivatedRoute, private router: Router, private data: DataService) {
         this.stripe = JSON.parse(this.route.snapshot.data['stripe'])[this.route.routeConfig.path];
-        console.log('get data', this.data.params);
+        this.months = this.data.params.months * 1;
+        console.log(this.months);
     }
 
     choosePayment(plan: Plan) {

@@ -6,18 +6,15 @@
             <a [routerLink]="['/full']"
                [queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">FULL</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="data.params.discount=='y'">
             <a [routerLink]="['/10off']"
                [queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">S$300
                 OFF</a>
         </li>
         <!--<li routerLinkActive="active">-->
-        <!--<a [routerLink]="['/sdn']">SDN</a>-->
+            <!--<a [routerLink]="['/custom']"-->
+               <!--[queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">Custom</a>-->
         <!--</li>-->
-        <li routerLinkActive="active">
-            <a [routerLink]="['/custom']"
-               [queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">Custom</a>
-        </li>
     </ul>
     <router-outlet></router-outlet>
 

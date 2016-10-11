@@ -14,7 +14,7 @@
       <button (click)="choosePayment(payment)" type="button" class="btn btn-primary">Pay with Card</button>
     </td>
   </tr>
-  <tr>
+  <tr *ngIf="months>=3">
     <td>3 months installment</td>
     <td></td>
     <td *ngFor="let plan of stripe.plans['3 months']">
@@ -23,7 +23,7 @@
       <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
     </td>
   </tr>
-  <tr>
+  <tr *ngIf="months>=6">
     <td>6 months installment</td>
     <td></td>
     <td *ngFor="let plan of stripe.plans['6 months']">
@@ -32,7 +32,7 @@
       <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
     </td>
   </tr>
-  <tr>
+  <tr *ngIf="months>=9">
     <td>9 months installment</td>
     <td></td>
     <td *ngFor="let plan of stripe.plans['9 months']">

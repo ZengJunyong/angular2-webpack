@@ -24,7 +24,7 @@
             <div class="form-group" *ngIf="options.custom=='no'">
                 <h4>2. How many months of installment do you want to show?</h4>
                 <label class="radio-inline">
-                    <input type="radio" [(ngModel)]="options.months"  name="months" value="full"> Full
+                    <input type="radio" [(ngModel)]="options.months"  name="months" value="0"> Full
                 </label>
                 <label class="radio-inline">
                     <input type="radio" [(ngModel)]="options.months"  name="months" value="3"> 3 months
@@ -49,9 +49,18 @@
 
         <p>
             Your payment URL to clients is
-            <a style="color: red;" target="_blank" href="{{origin}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
+            <a *ngIf="options.custom=='no'" style="color: red;" target="_blank" href="{{origin}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
                 {{origin}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}
-            </a> .
+            </a>
+            <a *ngIf="options.custom=='link1'" style="color: red;" target="_blank" href="{{origin}}/#custom">
+                {{origin}}/#custom
+            </a>
+            <a *ngIf="options.custom=='link2'" style="color: red;" target="_blank" href="{{origin}}/#custom2">
+                {{origin}}/#custom2
+            </a>
+            <a *ngIf="options.custom=='link3'" style="color: red;" target="_blank" href="{{origin}}/#custom3">
+                {{origin}}/#custom3
+            </a>
         </p>
     </div>
 </div>
