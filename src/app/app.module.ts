@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
+import {DataService} from './data.service';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -37,7 +38,7 @@ import {PriceResolve}  from './price.resolve';
         RouterModule.forRoot(ROUTES, {useHash: true})
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
-        StripeService,
+        StripeService,DataService,
         PriceResolve
     ]
 })

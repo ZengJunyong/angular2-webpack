@@ -1,7 +1,6 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {Subscription}          from 'rxjs/Subscription';
-import {StripeService}     from './stripe.service';
+import {DataService} from './data.service';
 import {Plan} from './plan'
 
 @Component({
@@ -11,23 +10,11 @@ import {Plan} from './plan'
     ],
     templateUrl: 'price.table.html'
 })
-export class PriceTable implements OnInit, OnDestroy {
-    params: any;
+export class PriceTable{
     stripe: any;
-    private sub: Subscription;
 
-    constructor(private route: ActivatedRoute, private router: Router, private stripeService: StripeService) {
+    constructor(private route: ActivatedRoute, private router: Router,private data: DataService) {
         this.stripe = JSON.parse(this.route.snapshot.data['stripe'])[this.route.routeConfig.path];
-    }
-
-    ngOnInit() {
-        this.sub = this.route.queryParams.subscribe(params => this.params = params);
-    }
-
-    ngOnDestroy() {
-        if (this.sub) {
-            this.sub.unsubscribe();
-        }
     }
 
     choosePayment(plan: Plan) {
