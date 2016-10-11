@@ -11,12 +11,12 @@ export class RM {
 
     options: any;
 
-    origin = document.location.origin;
+    path = document.location.origin + document.location.pathname;
 
     constructor() {
         this.options = {
             custom: 'no',
-            months: 'full',
+            months: '0',
             discount: 'n'
         };
     }

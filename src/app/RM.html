@@ -49,17 +49,17 @@
 
         <p>
             Your payment URL to clients is
-            <a *ngIf="options.custom=='no'" style="color: red;" target="_blank" href="{{origin}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
-                {{origin}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}
+            <a *ngIf="options.custom=='no'" style="color: red;" target="_blank" href="{{path}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
+                {{path}}#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}
             </a>
-            <a *ngIf="options.custom=='link1'" style="color: red;" target="_blank" href="{{origin}}/#custom">
-                {{origin}}/#custom
+            <a *ngIf="options.custom=='link1'" style="color: red;" target="_blank" href="{{path}}/#custom">
+                {{path}}#custom
             </a>
-            <a *ngIf="options.custom=='link2'" style="color: red;" target="_blank" href="{{origin}}/#custom2">
-                {{origin}}/#custom2
+            <a *ngIf="options.custom=='link2'" style="color: red;" target="_blank" href="{{path}}/#custom2">
+                {{path}}#custom2
             </a>
-            <a *ngIf="options.custom=='link3'" style="color: red;" target="_blank" href="{{origin}}/#custom3">
-                {{origin}}/#custom3
+            <a *ngIf="options.custom=='link3'" style="color: red;" target="_blank" href="{{path}}/#custom3">
+                {{path}}#custom3
             </a>
         </p>
     </div>
