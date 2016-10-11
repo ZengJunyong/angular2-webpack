@@ -15,6 +15,7 @@ export class PriceTable{
 
     constructor(private route: ActivatedRoute, private router: Router,private data: DataService) {
         this.stripe = JSON.parse(this.route.snapshot.data['stripe'])[this.route.routeConfig.path];
+        console.log('get data', this.data.params);
     }
 
     choosePayment(plan: Plan) {

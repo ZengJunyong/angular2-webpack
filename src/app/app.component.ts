@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        console.log('set params');
         this.sub = this.route.queryParams.subscribe(params => this.data.params = params);
     }
 

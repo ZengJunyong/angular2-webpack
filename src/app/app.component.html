@@ -1,7 +1,7 @@
 <h1 class="text-center">GaiGai</h1>
 
 <div class="container">
-  <ul class="nav nav-pills">
+  <ul class="nav nav-pills" *ngIf="data.params.custom=='no'">
     <li routerLinkActive="active">
       <a [routerLink]="['/full']">FULL</a>
     </li>
