@@ -49,8 +49,8 @@
 
         <p>
             Your payment URL to clients is
-            <a *ngIf="options.custom=='no'" style="color: red;" target="_blank" href="{{path}}/#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
-                {{path}}#?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}
+            <a *ngIf="options.custom=='no'" style="color: red;" target="_blank" href="{{path}}/#{{options.discount=='y'?'10off':''}}?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}">
+                {{path}}#{{options.discount=='y'?'10off':''}}?custom={{options.custom}}&months={{options.months}}&discount={{options.discount}}
             </a>
             <a *ngIf="options.custom=='link1'" style="color: red;" target="_blank" href="{{path}}/#custom">
                 {{path}}#custom
