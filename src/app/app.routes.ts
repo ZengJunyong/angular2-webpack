@@ -3,6 +3,7 @@ import {NoContent} from './no-content';
 
 import {PriceTable} from './price.table';
 import {Custom} from './custom';
+import {RM} from './RM';
 import {PayComponent} from './pay.component';
 import {PriceResolve}   from './price.resolve';
 
@@ -53,6 +54,10 @@ export const ROUTES: Routes = [
     {
         path: 'pay',
         component: PayComponent
+    },
+    {
+        path: 'rm',
+        component: RM
     },
     {
         path: '**',

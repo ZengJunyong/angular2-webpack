@@ -28,7 +28,7 @@ export class PayComponent implements OnInit, OnDestroy {
             key: key,
             name: 'PaktorMY Sdn Bhd',
             description: itemName,
-            image: 'https://www.letsgaigai.com/gokaikai/assets/images/big.logo.png',
+            image: 'https://www.mydatesmith.com/gokaikai/assets/images/stripe.logo.jpg',
             allowRememberMe: false,
             panelLabel: count ? 'Subscribe' : 'Pay MYR' + amount,
             token: function (token: any) {

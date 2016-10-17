@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {StripeService}     from './stripe.service';
+import {DataService} from './data.service';
 import {Plan} from './plan'
 
 @Component({
@@ -12,9 +12,12 @@ import {Plan} from './plan'
 })
 export class PriceTable {
     stripe: any;
+    months: number;
 
-    constructor(private route: ActivatedRoute, private router: Router, private stripeService: StripeService) {
+    constructor(private route: ActivatedRoute, private router: Router, private data: DataService) {
         this.stripe = JSON.parse(this.route.snapshot.data['stripe'])[this.route.routeConfig.path];
+        this.months = this.data.params.months * 1;
+        console.log(this.months);
     }
 
     choosePayment(plan: Plan) {

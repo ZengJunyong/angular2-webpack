@@ -1,20 +1,21 @@
 <h1 class="text-center">Mydatesmith</h1>
 
 <div class="container">
-  <ul class="nav nav-pills">
-    <li routerLinkActive="active">
-      <a [routerLink]="['/full']">FULL</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/10off']">S$300 OFF</a>
-    </li>
-    <!--<li routerLinkActive="active">-->
-      <!--<a [routerLink]="['/sdn']">SDN</a>-->
-    <!--</li>-->
-    <li routerLinkActive="active">
-      <a [routerLink]="['/custom']">Custom</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
+    <ul class="nav nav-pills" *ngIf="data.params.custom=='no'">
+        <li routerLinkActive="active" *ngIf="data.params.discount!='y'">
+            <a [routerLink]="['/full']"
+               [queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">FULL</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="data.params.discount=='y'">
+            <a [routerLink]="['/10off']"
+               [queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">MYR300
+                OFF</a>
+        </li>
+        <!--<li routerLinkActive="active">-->
+            <!--<a [routerLink]="['/custom']"-->
+               <!--[queryParams]="{custom: data.params.custom,months: data.params.months,discount: data.params.discount}">Custom</a>-->
+        <!--</li>-->
+    </ul>
+    <router-outlet></router-outlet>
 
 </div>
